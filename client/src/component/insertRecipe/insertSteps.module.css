@@ -1,0 +1,54 @@
+.conteiner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+.conteiner fieldset{
+    display: flex;
+    align-items: left;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+.conteiner legend{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.conteiner textarea{
+    resize: none;
+    width: 800px;
+    height: 200px;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(5, 70, 49,0.9);
+    font-size: 1.3rem;
+    color: rgb(199, 247, 218);
+    font-weight:900;
+}
+
+.conteiner button{
+    font-size: 1rem;
+        color: rgb(190, 210, 198);
+        padding: 2px;
+        margin: 2px;
+        background-color: rgb(5, 70, 49,0.9);
+        font-weight:900;
+        border-bottom: 3px solid black;
+        border-right: 3px solid black;
+}
+.mostrarStep{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2px;
+    width: 70%;
+    box-sizing: border-box;
+}
+.p{
+    max-width: "700px";
+}

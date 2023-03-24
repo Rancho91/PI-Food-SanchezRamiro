@@ -1,0 +1,14 @@
+.diets{
+    width: 70%;
+    align-items: center;
+}
+
+.diets label {
+    padding: 2px;
+    margin: 2px;
+    font-size: 1.5rem;
+
+}
+.diets input :checked{
+    color: rgb(250, 250, 250);
+}

@@ -1,0 +1,74 @@
+
+.paginado{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    padding: 3%
+}
+.orderBy{
+    background-color: rgb(190, 210, 198);
+    color: rgb(5, 70, 49,0.9);
+    padding: 2px;
+    margin: 2px;
+    font-size: 1rem;
+    
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+.button{
+    font-size: 1rem;
+    color: rgb(190, 210, 198);
+    padding: 2px;
+    margin: 2px;
+    height: 2rem;
+    width: 2rem;
+    background-color: rgb(5, 70, 49,0.9);
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.unSelectButton{
+    background-color: rgba(13, 70, 5, 0.9);
+    color: rgb(190, 210, 198);
+    padding: 2px;
+    margin: 2px;
+    font-size: 1rem;
+    
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.selectPag{
+    background-color: rgb(190, 210, 198);
+    color: rgb(5, 70, 49,0.9);
+    font-size: 1rem;
+    padding: 2px;
+    margin: 2px;
+    height: 2rem;
+    width: 2rem;
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.button:hover{
+    background-color: rgb(190, 210, 198);
+    color: rgb(5, 70, 49,0.9);
+}
+
+.SelectButton{
+    background-color: rgb(190, 210, 198);
+    color: rgb(5, 70, 49,0.9);
+    padding: 2px;
+    margin: 2px;
+    font-size: 1rem;
+    
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}

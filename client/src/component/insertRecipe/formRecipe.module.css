@@ -1,0 +1,92 @@
+.conteiner{
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    height: 800%;
+    background:  linear-gradient(to right, rgba(128, 249, 119, 0.8), rgba(255, 255, 255, 0.8));
+  
+
+    
+}
+.conteiner legend{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.conteiner button{
+    font-size: 1rem;
+    color: rgb(190, 210, 198);
+    padding: 2px;
+    margin: 2px;
+    background-color: rgb(5, 70, 49,0.9);
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+.conteiner fieldset{
+    border: 2px solid black;
+}
+.conteiner legend {
+    text-align: left;
+}
+.conteinerInputs{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
+    justify-content: center;
+}
+
+.conteiner input{
+    background-color: rgb(5, 70, 49,0.9);
+    font-size: 1rem;
+    color: rgb(199, 247, 218);
+    font-weight:900;
+}
+.conteiner label{
+    font-size: 1.1rem;
+    font-weight:700;
+    color: rgb(0, 0, 0);
+    margin: 2px;
+    padding: 2px;
+}
+.diets input :hover(){
+    color: rgb(250, 250, 250);
+}
+
+.summary {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+align-content: center;
+flex-wrap: wrap;
+}
+
+.summary textarea{
+
+    resize: none;
+    width: 600px;
+    height: 100px;
+    align-items: center;
+    background-color: rgb(5, 70, 49,0.9);
+    font-size: 1.3rem;
+    color: rgb(199, 247, 218);
+    font-weight:900;
+
+}
+.error h3{
+    color: rgb(226, 7, 7);
+    font-weight: 900;
+    font-size: 2rem;
+}
+.diets {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.step{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

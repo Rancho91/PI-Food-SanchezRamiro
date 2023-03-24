@@ -1,0 +1,80 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    background:  linear-gradient(to right, rgba(128, 249, 119, 0.8), rgba(255, 255, 255, 0.8));
+
+}
+.conteiner h1{
+ font-size: 3.5rem;
+ font-weight:800;
+ color: rgb(0, 0, 0);
+
+}
+.conteiner h3{
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.diets{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.diets ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight:600;
+}
+
+.diets li{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    background-color: rgba(96, 191, 37, 0.7);
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+
+}
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.summary h2{
+    font-size: 2.5rem;
+    font-weight:800;
+}
+
+.summary p{
+    font-size: 1.2rem;
+    font-weight:600;
+}
+.steps h2{
+    font-size: 2.5rem;
+    font-weight:800;
+}
+.steps h4{
+    font-size: 1.5rem;
+    font-weight:600;
+}
+.steps p{
+    font-size: 1.2rem;
+    font-weight:600;
+}

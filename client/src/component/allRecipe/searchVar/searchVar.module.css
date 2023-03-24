@@ -1,0 +1,80 @@
+.searchVar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+.fieldset{
+    width:  80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid rgb(17, 2, 52);
+    background:  linear-gradient(to right, rgba(128, 249, 119, 0.8), rgba(255, 255, 255, 0.8));
+    
+}
+.fieldset legend{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight:900;
+    color: rgb(36, 144, 0);
+    text-shadow: -2px -2px 0.5px #000, 2px 2px 0.5px #000, -2px 2px 0.5px #000, 2px -2px 0.5px #000;
+}
+
+.select{
+    
+    font-weight:900;
+
+}
+.select option{
+    background-color: rgba(13, 70, 5, 0.9);
+    font-size: 1rem;
+    color: rgb(190, 210, 198);
+    
+    font-weight:900;
+}
+.select select{
+    background-color: rgba(13, 70, 5, 0.9);
+    font-size: 1rem;
+    color: rgb(190, 210, 198);
+    
+    font-weight:900;
+}
+.select span{
+    font-size: 1.5rem;
+    
+    font-weight:900;
+}
+.button {
+
+        font-size: 1rem;
+        color: rgb(190, 210, 198);
+        padding: 2px;
+        margin: 2px;
+
+        background-color: rgba(13, 70, 5, 0.9);
+        font-weight:900;
+        border-bottom: 3px solid black;
+        border-right: 3px solid black;
+    
+}
+
+.name{
+    font-size: 1.5rem;
+    
+    font-weight:900;
+}
+.name input {
+    background-color: rgba(13, 70, 5, 0.9);
+    font-size: 1rem;
+    color: rgb(190, 210, 198);
+    
+    font-weight:900;
+}
+
+.diets{
+    margin: 10px;
+    padding-left: 5px;
+}
