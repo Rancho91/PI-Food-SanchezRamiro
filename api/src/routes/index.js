@@ -3,6 +3,7 @@ const { getRecipeRoute } = require('./getRecipeRoute')
 const { postRecipe } = require('./postRecipeRoute')
 const { getAllRecipeRoute } = require('./getAllRecipeRoute')
 const {getDietsRoute} = require ('./getDietsRoute')
+const {deleteRecipeDBrouter} = require("./deleteRecipeDB")
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -16,6 +17,6 @@ router.get('/recipes/:idRecipe', getRecipeRoute)
 router.post('/recipes', postRecipe)
 router.get('/recipes', getAllRecipeRoute)
 router.get('/diets', getDietsRoute)
-
+router.delete('/recipes/:id', deleteRecipeDBrouter)
 
 module.exports = router;

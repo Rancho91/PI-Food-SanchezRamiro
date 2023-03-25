@@ -1,5 +1,5 @@
 
-const {GET_ALL_RECIPE, GET_DIETS, FILTER_RECIPE, ORDERBYHS, ORDERNAME} =require("./types") 
+const {GET_ALL_RECIPE, GET_DIETS, FILTER_RECIPE, ORDERBYHS, ORDERNAME, DELETE_RECIPE} =require("./types") 
 const axios =require("axios") 
 console.log(axios)
 
@@ -35,7 +35,7 @@ function filterName(name, diet, db){
 console.log(data)
       if(db==="db") data = data.filter((d)=>Object.keys(d).includes("createInDB"))
       if(db=== "api")data = data.filter((d)=>!Object.keys(d).includes("createInDB"))
-      if(diet !== "none"){
+      if(diet !== "all"){
         data = data.filter((d)=>d.diets.includes(diet)===true)
       }
       console.log(data)
@@ -54,4 +54,9 @@ const orderByHS = (ascDesc) =>{
 const orderName = (ascDesc) =>{
   return {type: ORDERNAME, payload: ascDesc}
 }
-module.exports = {getAllRecipes, getDiets, filterName, orderByHS, orderName}
+
+const deleteRecipe =  (id) =>{
+
+      return  {type: DELETE_RECIPE, payload: id} 
+}
+module.exports = {getAllRecipes, getDiets, filterName, orderByHS, orderName, deleteRecipe}

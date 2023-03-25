@@ -21,8 +21,8 @@ const [indexDB, setIndexDB] = useState("")
   }
   const handleOnClick = () =>{
     props.filtrarNombre(indexName,indexDiet,indexDB)
+    setIndexName("")
 
-  
   }
   const diets = useSelector(state=>state.dietsList)
 
@@ -36,8 +36,8 @@ const [indexDB, setIndexDB] = useState("")
             </div>
             <div className={styles.select}>
               <span>Diet: </span>
-              <select className={styles.diets}name="diets" id="" onChange={handleOnChangeDiet}>
-                <option value="none" id="0">none</option>
+              <select className={styles.diets} name="diets" id="" onChange={handleOnChangeDiet}>
+                <option value="all" id="0">All</option>
                 {
                   diets.length?(diets.map((diet)=>{
                     return (
@@ -48,7 +48,7 @@ const [indexDB, setIndexDB] = useState("")
               </select>
               <span>Prosedencia: </span>
               <select  onChange={handleOnChangeDB} name="db" id="">
-                <option name="todo" value="todo"> Todo </option>
+                <option name="all" value="all"> all </option>
                 <option name="api" value="api"> Api </option>
                 <option name="db" value="db"> Data Base</option>
               </select> 

@@ -1,9 +1,11 @@
+import Recipe from "../../component/allRecipe/recipe";
 import {
     GET_ALL_RECIPE,
     GET_DIETS,
     FILTER_RECIPE,
     ORDERBYHS,
-    ORDERNAME
+    ORDERNAME,
+    DELETE_RECIPE
   } from "../actions/types"; 
 
 const initialState = {
@@ -52,7 +54,10 @@ export default function reducer(state = initialState , { type, payload }) {
         const order = state.filters.sort(comparar)
         return{...state, filters:[...order]}}
     } 
-        default: return state
+    case DELETE_RECIPE:{
+      return{...state, filters:state.filters.filter((recipe)=>recipe.id !==payload)}
     }
+        default: return state
+    } 
 }
 

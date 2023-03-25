@@ -1,17 +1,17 @@
 const {Recipe} = require('../db')
-const {saveRecipeDiet } = require('./saveRecipeDietDB')
+
 
 const createRecipe = async ({name,image,summary, healthScore,steps = null, diets}) =>{
     steps = JSON.stringify(steps)
    
     const newRecipe = {name,image,summary,healthScore, steps}
-    const createRecipe = await Recipe.create(newRecipe)
+    const createdRecipe = await Recipe.create(newRecipe)
+
     if(diets.length !== 0){
-        diets.forEach(d=>saveRecipeDiet(createRecipe.dataValues.id,d))
+        await createdRecipe.addDiet(diets)
     }
- 
-    
-return createRecipe.dataValues
+     
+    return createdRecipe.dataValues
 }
 
 module.exports = {createRecipe}

@@ -14,7 +14,7 @@ export default function AllRecipes(props) {
     const [ascDescName, setAscDescName] = useState(true)
     const [healthScore, setHealtScore] = useState(false)
     const [name, setName] = useState(false)
-
+    const [load, setLoad] = useState({name:"", diets:"", prosedencia:""})
 
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -23,12 +23,15 @@ export default function AllRecipes(props) {
             dispatch(getDiets())
           };
           traerTodo()
+          
     },[])
     
     const filtrarNombre = (name,diet,db)=>{
+        if(name === load.name && diet===load.diets && db ===load.prosedencia) return
         dispatch(filterName(name,diet,db))
         setHealtScore(false)
         setName(false)
+        setLoad({name: name, diets: diet, prosedencia: db})
     }
     
     let allRecipes = useSelector((state) => {
@@ -75,8 +78,8 @@ export default function AllRecipes(props) {
 
  let numbers = Object.keys(allRecipes)
  console.log(numbers)
-const hambr= <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c1a8.png" style={{width: "20px", height: "20px"}}/>
-const saludable = <img src="https://static.vecteezy.com/system/resources/previews/012/806/272/non_2x/red-apple-healthy-food-png.png" style={{width: "20px", height: "20px"}}/>
+const hambr= <img src="/hamburger.png" style={{width: "20px", height: "20px"}}/>
+const saludable = <img src="/apple.webp" style={{width: "20px", height: "20px"}}/>
     return (
         <div>
         <NavBar/>
@@ -90,7 +93,7 @@ const saludable = <img src="https://static.vecteezy.com/system/resources/preview
             <div className={styles.buttonPag}>
                  {
                numbers?numbers.map((key)=>{
-                    return <button className={key===numPagina?styles.selectPag : styles.button}value={key} onClick={OnClickNumb}> {key}</button>
+                    return <button className={key===numPagina?styles.selectPag : styles.button} value={key} onClick={OnClickNumb}> {key}</button>
                 }):(<h3>No hay paginas</h3>)
              }
             </div>
@@ -107,7 +110,8 @@ const saludable = <img src="https://static.vecteezy.com/system/resources/preview
                     healthScore={recipe.healthScore?recipe.healthScore:null}
                     steps={recipe.steps?recipe.steps:null}
                     diets={recipe.diets?recipe.diets:null}
-
+                    createInDB={recipe.createInDB?recipe.createInDB:null}
+                    
                 />
             }
                 )): (  <h3>Loading</h3>)

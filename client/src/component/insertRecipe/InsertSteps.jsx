@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./insertSteps.module.css"
 
 export default function InsertSteps(props){
@@ -8,7 +8,13 @@ export default function InsertSteps(props){
         step: "",
     });
     const [mostrarStep, setMostrarStep]= useState([])
-
+   
+    useEffect(()=>{
+        if(props.quest){
+            setStep({number:1, step:""})
+            setMostrarStep([])
+        }
+    },[props.quest])
     
     const handleSubmit = (event) =>{
         if(step.step){
