@@ -6,7 +6,7 @@ try {
         const create = await createRecipe(recipe)
                 res.status(200).json(create)
 } catch (error) {
-     res.status(404).json({error: 'no se pudo crear la receta'})
+     res.status(404).json({error: error.message})
 
 }
 }

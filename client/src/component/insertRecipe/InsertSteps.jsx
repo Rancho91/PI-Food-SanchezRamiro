@@ -25,7 +25,7 @@ export default function InsertSteps(props){
                     number: number,
                     step : ''
         })
-        } else window.alert("debe ingresar una descripsion del step")
+        } else window.alert("you must enter a description of the step")
 
         
         
@@ -42,15 +42,17 @@ export default function InsertSteps(props){
                 <fieldset >
                     <legend>Steps</legend>
                     <label value="Step Number"> Steps {step.number}</label>
-                    <textarea type="text" name="step" value={step.step} onChange={handleIndexInput}/>
+                    <textarea type="text" name="step" value={step.step} onChange={handleIndexInput} disabled={props.quest?true:false}/>
+                    <button type="button" onClick={handleSubmit} disabled={props.quest?true:false}>Add</button>
+
                     <div className={styles.mostrarStep}>
                             {
                                 mostrarStep.length !== 0?(
                                     mostrarStep.map((step)=>{
                                         return(
-                                            <div>
+                                            <div className={styles.step}>
                                                 <h4>Number{step.number}: </h4>
-                                                 <p> {step.step}</p>
+                                                 <p className={styles.p} > {step.step}</p>
                                                 </div>
                                         )
                                         })
@@ -58,7 +60,6 @@ export default function InsertSteps(props){
                             } 
                     </div>
                     
-                    <button type="button" onClick={handleSubmit}>Agregar</button>
                 </fieldset>
 
         </div>

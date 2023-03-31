@@ -50,5 +50,14 @@
     box-sizing: border-box;
 }
 .p{
-    max-width: "700px";
+    max-width:  none;
+    overflow-wrap: break-word;
+    
+}
+.step{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 500px;
+
 }

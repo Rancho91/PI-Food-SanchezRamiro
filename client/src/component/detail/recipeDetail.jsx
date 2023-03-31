@@ -16,27 +16,27 @@ console.log(id)
                 if(data.steps !== "null"){
                 let steps = JSON.parse(data.steps)
                 setRecipe({...data, steps:[...steps]})
-                console.log(recipe)
                 } else {
                     let steps = null
                     setRecipe({...data, steps:steps})}              
             } else {
-              data?(setRecipe(data)):window.alert("No hay personajes con ese ID");  
-            }
-            console.log(recipe.diets)
-            
+              data?(setRecipe(data)):window.alert("There are no characters with that ID");  
+            }            
         })
         .catch((err) => {
-            window.alert("No hay personajes con ese ID");
+            window.alert("There are no characters with that ID");
           });
         
      return setRecipe({})
     },[id])
+    console.log(recipe.diets)
+    console.log(recipe)
 
     return(
         <div className={styles.conteiner}>
             <NavBar/>
-            <h1>{recipe.name}</h1>
+            
+            <h1>cargando</h1>            
             <div className={styles.diets}>
                  {recipe.diets?(
                  <ul>
@@ -54,18 +54,18 @@ console.log(id)
             <img src={recipe.image} alt="" />
             <div className={styles.summary}>
                 <h2> Summary: </h2>
-                <p>{recipe.summary?recipe.summary.replace(/(<([^>]+)>)/gi, ''):"No tiene resumen"}</p>
+                <p>{recipe.summary?recipe.summary.replace(/(<([^>]+)>)/gi, ''):"does not have abstract"}</p>
             </div>
             <div className={styles.steps}>
                 <h2> Steps: </h2>
                 {
                     recipe.steps?(recipe.steps.map((step)=>{
                         return(<div>
-                            <h4>Number{step.number}: </h4>
+                            <h4>Number {step.number}: </h4>
                             <p> {step.step}</p>
                             </div>
                         )
-                    })):(<h3> No tiene pasos esta receta</h3>)
+                    })):(<h3>This recipe has no steps</h3>)
                 }
             </div>
            

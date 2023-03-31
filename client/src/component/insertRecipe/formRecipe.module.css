@@ -5,14 +5,14 @@
     align-content: center;
     height: 800%;
     background:  linear-gradient(to right, rgba(128, 249, 119, 0.8), rgba(255, 255, 255, 0.8));
-    margin-top: 5px;
-
-    
+    margin-top: 30px;  
 }
+
 .conteiner legend{
     font-size: 1.5rem;
     font-weight: 700;
 }
+
 .conteiner button{
     font-size: 1rem;
     color: rgb(190, 210, 198);
@@ -100,4 +100,14 @@ flex-wrap: wrap;
     color: rgb(199, 247, 218);
     font-weight:900;
     border: 2px solid red
+}
+.deshabilitar{
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    margin: 2px;
+    background-color: rgba(118, 118, 118, 0.9);
+    font-weight:900;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
 }

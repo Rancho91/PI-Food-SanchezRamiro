@@ -1,8 +1,5 @@
 .App {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   justify-content: center;
 }
 
@@ -58,6 +55,7 @@
   margin: 0 auto;
   padding: 10px;
   border-radius: 50%;
+  width: 300px;
 }
 
 .henry h1 {

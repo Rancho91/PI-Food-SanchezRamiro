@@ -1,13 +1,12 @@
 const axios = require('axios')
-const { DB_KEY, DB_KEY2 } = process.env
+const { DB_KEY, DB_KEY2, DB_KEY3 } = process.env
 const { getAllRecipesDB } = require('./getAllRecipesDB')
 
 
 
 const getAllRecipe = async () =>{ 
-    const getAllRecipe = await axios('https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5').then((response)=>response.data.results.map((data)=>{
-
-    // const getAllRecipe = await axios(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${DB_KEY2}&addRecipeInformation=true&number=100`).then((response)=>response.data.results.map((data)=>{
+    
+    const getAllRecipe = await axios(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${DB_KEY3}&addRecipeInformation=true&number=100`).then((response)=>response.data.results.map((data)=>{
         const newRecipe = {
                 id: data.id?data.id:null,
                 name: data.title?data.title:null,

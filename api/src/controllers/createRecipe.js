@@ -10,7 +10,7 @@ const createRecipe = async ({name,image,summary, healthScore,steps = null, diets
     if(diets.length !== 0){
         await createdRecipe.addDiet(diets)
     }
-     
+
     return createdRecipe.dataValues
 }
 

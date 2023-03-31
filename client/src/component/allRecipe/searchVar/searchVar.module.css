@@ -55,15 +55,11 @@ option:hover{
 }
 .button {
 
-        font-size: 1rem;
+        font-size: 1.4rem;
         color: rgb(190, 210, 198);
-        padding: 2px;
-        margin: 2px;
-
         background-color: rgba(13, 70, 5, 0.9);
         font-weight:900;
-        border-bottom: 3px solid black;
-        border-right: 3px solid black;
+        transition:all 0.5s ;
     
 }
 .button:hover{

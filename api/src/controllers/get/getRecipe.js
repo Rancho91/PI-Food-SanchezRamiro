@@ -34,15 +34,12 @@ try {
         steps: data.analyzedInstructions.length ? data.analyzedInstructions[0].steps.map((step)=>{
             return{number: step.number, step: step.step }
         }) : null,
-        diets: [],
+        diets:[],
     }
-data.vegetarian? newRecipe.diets.push(data.vegetarian) : null
-data.vegan? newRecipe.diets.push(data.vegan) : null
-data.glutenFree ? newRecipe.diets.push(data.vegan) : null
-if(data.diets.length){
-    data.diets.forEach(element => {
-        newRecipe.diets.push(element)
-    });
+
+if(data.diets.length !== 0){
+        newRecipe.diets=[ ...data.diets]
+   
 }
 
 return newRecipe

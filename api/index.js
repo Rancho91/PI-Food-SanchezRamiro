@@ -19,9 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const { saveAllRecipeDB } = require('./src/controllers/saveRecipeDB')
 const { saveDiets } = require('./src/controllers/get/saveDietsDB')
-const { getAllRecipe } = require('./src/controllers/get/getAllRecipe')
  
 // Syncing all the models at once.
 conn.sync({ alter: true }).then(async () => {
@@ -31,4 +29,3 @@ conn.sync({ alter: true }).then(async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
-    

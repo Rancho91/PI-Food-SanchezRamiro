@@ -2,7 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import Recipe from "./recipe"
-import  {getAllRecipes, getDiets, filterName, orderByHS, orderName}  from "../../redux/actions/index"
+import  {getAllRecipes, getDiets, filterName, orderByHS, orderName, filterDietApi}  from "../../redux/actions/index"
 import SearchVar from "./searchVar/searchVar"
 import styles from "./allRecipe.module.css"
 import NavBar from "../NavBar/navBar"
@@ -27,11 +27,19 @@ export default function AllRecipes(props) {
     },[])
     
     const filtrarNombre = (name,diet,db)=>{
-        if(name === load.name && diet===load.diets && db ===load.prosedencia) return
-        dispatch(filterName(name,diet,db))
-        setHealtScore(false)
-        setName(false)
-        setLoad({name: name, diets: diet, prosedencia: db})
+        if(!name){
+            setNumPagina(1)
+            dispatch(filterDietApi(diet,db))
+            setHealtScore(false)
+            setName(false)
+        }else {
+            setNumPagina(1)
+           dispatch(filterName(name,diet,db)) 
+           setHealtScore(false)
+           setName(false)
+        }
+
+
     }
     
     let allRecipes = useSelector((state) => {
@@ -75,9 +83,8 @@ export default function AllRecipes(props) {
         setName(false)
  }
     }
-
  let numbers = Object.keys(allRecipes)
- console.log(numbers)
+
 const hambr= <img src="/hamburger.png" style={{width: "20px", height: "20px"}}/>
 const saludable = <img src="/apple.webp" style={{width: "20px", height: "20px"}}/>
     return (
@@ -87,12 +94,12 @@ const saludable = <img src="/apple.webp" style={{width: "20px", height: "20px"}}
             <div className={styles.order}>
                 
                 <button onClick={clickOrder} name="HS" className={healthScore?styles.SelectButton:styles.unSelectButton}> Order by Healt Score  {ascDescHS?saludable: hambr}</button>
-                <button onClick={clickOrder} name="name" className={name?styles.SelectButton:styles.unSelectButton}>Order by title</button>
+                <button onClick={clickOrder} name="name" className={name?styles.SelectButton:styles.unSelectButton}>Order by title{ascDescName?" Z-A ":" A-Z"}</button>
             </div>
 
             <div className={styles.buttonPag}>
                  {
-               numbers?numbers.map((key)=>{
+               numbers.length?numbers.map((key)=>{
                     return <button className={key===numPagina?styles.selectPag : styles.button} value={key} onClick={OnClickNumb}> {key}</button>
                 }):(<h3>No hay paginas</h3>)
              }

@@ -47,7 +47,7 @@ const handleOnChang = (e) =>{
                     return (
                         <label>{diet.name}:
                         <input type="checkbox" id={diet.id}value={diet.name} onChange={handleOnChang}
-                        checked = {clear?"false":null}/> 
+                        checked = {clear?"false":null} disabled={props.quest?true:false}/> 
                         </label>
                     )
                 })): <p>no hay dietas cargadas</p>

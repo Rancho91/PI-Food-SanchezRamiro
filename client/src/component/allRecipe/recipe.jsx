@@ -44,8 +44,11 @@ const handleImageLoad = () =>{
                 return(<li>{ diet}  </li>)
             })):(<h6>No posee dietas</h6>)
             }
+            
             </ul>
-            {createInDB?(<button onClick={deleteRecipeDB}>X</button>):null}
+            <div className={styles.delete}>
+            {createInDB?(<button onClick={deleteRecipeDB} >X</button>):null}
+            </div>
 
     </div>)
 }

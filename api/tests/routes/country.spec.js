@@ -17,8 +17,9 @@ describe('Recipe routes', () => {
   beforeEach(() => Recipe.sync({ force: true })
     .then(() => Recipe.create(recipe)));
   describe('GET /recipes', () => {
-    it('should get 200', () =>
-      agent.get('/recipes').expect(200)
-    );
+    it('should get 200', function(done) {
+      this.timeout(5000); // aumenta el tiempo de espera a 5 segundos
+      agent.get('/recipes').expect(200, done);
+    });
   });
 });
