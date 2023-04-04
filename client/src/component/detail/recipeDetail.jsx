@@ -34,9 +34,7 @@ console.log(id)
 
     return(
         <div className={styles.conteiner}>
-            <NavBar/>
-            
-            <h1>cargando</h1>            
+            <NavBar/>           
             <div className={styles.diets}>
                  {recipe.diets?(
                  <ul>
